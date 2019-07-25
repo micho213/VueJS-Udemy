@@ -2,7 +2,7 @@
 Vue.js and Firebase projects
 
 # Ninja Smoothies - project 1
-desc - using Vue to make a simple SPA to make a CRUDE app about smoothies
+desc - using Vue to make a simple SPA to make a CRUDE app about smoothies \n
 link - https://ninjasmoothies-e486f.web.app
 
 # Ninja Chat - project 2
