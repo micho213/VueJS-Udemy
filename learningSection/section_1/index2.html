@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Conditional if and loops</title>
+</head>
+<body>
+    <div id="app2">
+
+        <h1>{{title}}</h1>
+
+        <p v-if="show"> The variable must be true if this shows </p>
+        <p v-else-if="showAge">This is visible is showAge is true</p>
+        <button @click="toggleName">Change value of show</button>
+        <button @click="toggleAge">Change value of showAge</button>
+
+
+        <!-- looping -->
+
+
+        <ul>
+            <li v-for="item in items">{{item}}</li>
+        </ul>
+
+        <ul>
+            <li v-for="object in dataArray">
+                <p> name {{ object.name}} </p>
+                <p>age  {{ object.age}}</p>
+
+            </li>
+        </ul>
+    </div>
+    <script src="app2.js"></script>
+</body>
+</html>

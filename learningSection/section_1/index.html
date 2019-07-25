@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .one {
+            color: gold
+        }
+
+        .two {
+            text-decoration: line-through;
+        }
+
+        .canvas {
+            width: 300px;
+            height: 300px;
+            margin: 1.5em;
+            background: #ddd
+        }
+    </style>
+    <title>Ninja coding</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+
+        <!-- you can pass strings with "" -->
+        <p>{{greet("Good morning")}}</p>
+
+        <!-- use v-bind:attributeName to bind vue to an attribute
+        or just simply use  : -->
+        <a v-bind:href="url" target="blank">Vue Api</a>
+
+        <!-- event when the attribute classes is a list it simple puts the list in -->
+        <div :class="classes">Classes from Instance</div>
+        <input type="text" :placeholder="name" />
+        <p>I earn ${{wage}}</p>
+
+        <!-- after the v-on: you put the name of the event -->
+        <!-- inside quotations you can write javascript right away 
+        or you can reference a method if you want -->
+        <button v-on:click="wage++">Increase wage by $1 </button>
+        <button v-on:click="decreaseWage()">decrease wage by $1 </button>
+
+        <button v-on:dblclick="wage+=5">Increase wage by $5 </button>
+        <button v-on:dblclick="wage-=5">decrease wage by $5 </button>
+
+        <br>
+        <br>
+        <button @click="logEvent">Log Event Info</button>
+
+
+        <br>
+        <div class="canvas" @mousemove="logCoords">
+            x : {{coords.x}} , y : {{coords.y}}
+
+        </div>
+
+        <br>
+        <br>
+        <!-- use key up yo be in sync with what the user types -->
+        <!-- key down causes 1 letter behind
+         -->
+        <input type="text" @keyup="updateName" placeholder="using listener">
+        <p>{{updateValue}}</p>
+
+
+        <!-- acheives the same as above but without a listener or a functions
+        it two way binds the input into the box with the value -->
+        <input type="text" v-model="updateValue2" placeholder="using two way binding">
+        <p>{{updateValue2}}</p>
+
+
+        <br><br>
+
+        <!-- to add a modifier put a dot and the modifier after the event -->
+            <!-- @click.alt makes the button only activate when you click with alt button -->
+        <button @click.alt="logMessage">Click me ( modifiers)</button>
+
+        <!-- .prevent modifier prevents the default behaviour -->
+        <a href="http://www.google.com" @click.prevent="logMessage"> Google </a>
+
+    </div>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
